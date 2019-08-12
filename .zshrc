@@ -123,6 +123,7 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias mydotfiles='git --git-dir=$HOME/.my-dotfiles/ --work-tree=$HOME'
+alias mdf='mydotfiles'
 
 export MINIKUBE_HOME="/data/cameron"
 
