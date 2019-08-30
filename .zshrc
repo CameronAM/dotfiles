@@ -8,7 +8,6 @@ export ZSH=/home/cameron/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
-# ZSH_THEME="bullet-train"
 ZSH_THEME=powerlevel10k/powerlevel10k
 
 # Set list of themes to load
@@ -56,6 +55,9 @@ ZSH_THEME=powerlevel10k/powerlevel10k
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# Set fzf installation directory path
+# export FZF_BASE=/usr/share/fzf
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -63,7 +65,8 @@ ZSH_THEME=powerlevel10k/powerlevel10k
 plugins=(
   git
   zsh-syntax-highlighting
-  # zsh-autosuggestions
+  zsh-autosuggestions
+  fzf
   kube-ps1
   minikube
   helm
@@ -80,20 +83,6 @@ source ~/.p10k.zsh
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
   source /etc/profile.d/vte.sh
 fi
-
-# configure bullet train
-
-# BULLETTRAIN_KCTX_KCONFIG="$HOME/.kube/config"
-#
-# BULLETTRAIN_PROMPT_ORDER=(
-#   time
-#   status
-#   dir
-#   git
-#   aws
-#   kctx
-#   cmd_exec_time
-# )
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
