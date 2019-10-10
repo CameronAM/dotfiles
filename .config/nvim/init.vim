@@ -89,6 +89,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   " make paste work sensibly (ie. re-indent the pasted chunk)
   Plug 'sickill/vim-pasta'
 
+  " add some shell sugar
+  Plug 'tpope/vim-eunuch'
+
   " add EditorConfig support
   Plug 'editorconfig/editorconfig-vim'
 
@@ -163,6 +166,7 @@ noremap <leader>- :split <CR>
 noremap <leader><Bslash> :vsplit <CR>
 
 " FZF
+nnoremap <leader>T :Files <CR>
 nnoremap <leader>t :GFiles <CR>
 nnoremap <leader>b :Buffers <CR>
 nnoremap <leader>a :Ag <CR>

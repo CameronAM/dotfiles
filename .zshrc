@@ -1,3 +1,13 @@
+# zmodload zsh/datetime
+# setopt PROMPT_SUBST
+# PS4='+$EPOCHREALTIME %N:%i> '
+#
+# logfile=$(mktemp zsh_profile.XXXXXXXX)
+# echo "Logging to $logfile"
+# exec 3>&2 2>$logfile
+#
+# setopt XTRACE
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -172,4 +182,5 @@ eval $(thefuck --alias) # enable thefuck properly
 export SDKMAN_DIR="/home/cameron/.sdkman"
 [[ -s "/home/cameron/.sdkman/bin/sdkman-init.sh" ]] && source "/home/cameron/.sdkman/bin/sdkman-init.sh"
 
-
+# unsetopt XTRACE
+# exec 2>&3 3>&-
