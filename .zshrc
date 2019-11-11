@@ -121,6 +121,14 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# stop minikube checking for updates
+export MINIKUBE_WANTUPDATENOTIFICATION=false
+
+# add nvim as editor, if installed
+if [ -e "$(which nvim)" ] ; then
+  export EDITOR="$(which nvim)"
+fi
+
 alias mydotfiles='git --git-dir=$HOME/.my-dotfiles/ --work-tree=$HOME'
 alias mdf='mydotfiles'
 
@@ -177,6 +185,8 @@ if [ -d "$HOME/.cargo" ]; then
 fi
 
 eval $(thefuck --alias) # enable thefuck properly
+
+
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/cameron/.sdkman"
