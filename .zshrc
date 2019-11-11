@@ -17,8 +17,13 @@ export ZSH=/home/cameron/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-ZSH_THEME=powerlevel10k/powerlevel10k
+# zsh_theme="robbyrussell"
+if [ -d "$HOME/.oh-my-zsh/custom/themes/powerlevel10k" ] ; then
+  ZSH_THEME=powerlevel10k/powerlevel10k
+else
+  echo '*** Install PL10K with "git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k"'
+  ZSH_THEME="robbyrussell"
+fi
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -72,6 +77,10 @@ ZSH_THEME=powerlevel10k/powerlevel10k
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+[[ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]] && echo '*** Install zsh-syntax-highlighting with "git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"'
+
+[[ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]] && echo '*** Install zsh-syntax-highlighting with "git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"'
+
 plugins=(
   git
   zsh-syntax-highlighting
