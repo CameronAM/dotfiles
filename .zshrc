@@ -81,6 +81,9 @@ fi
 
 [[ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]] && echo '*** Install zsh-syntax-highlighting with "git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"'
 
+# stop minikube checking for updates
+export MINIKUBE_WANTUPDATENOTIFICATION=false
+
 plugins=(
   git
   zsh-syntax-highlighting
@@ -129,9 +132,6 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# stop minikube checking for updates
-export MINIKUBE_WANTUPDATENOTIFICATION=false
 
 # add nvim as editor, if installed
 if [ -e "$(which nvim)" ] ; then

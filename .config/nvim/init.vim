@@ -83,6 +83,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   " block comment support
   Plug 'tomtom/tcomment_vim'
 
+  " add extra commenting goodness
+  Plug 'scrooloose/nerdcommenter'
+
   " git support
   Plug 'tpope/vim-fugitive'
 
