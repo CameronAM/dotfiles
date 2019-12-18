@@ -152,7 +152,7 @@ fi
 if [ -d "$HOME/.npm-packages/bin" ] ; then
     NPM_PACKAGES="${HOME}/.npm-packages"
     PATH="$NPM_PACKAGES/bin:$PATH"
-    
+
     # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
     unset MANPATH # delete if you already modified MANPATH elsewhere in your config
     export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
@@ -174,7 +174,6 @@ if [ -d "/usr/lib/jvm/java-openjdk" ]; then
   PATH="$JAVA_HOME/bin;$PATH"
 fi
 
-
 # android config
 export ANDROID_SDK_ROOT=/data/cameron/applications/Android/Sdk
 if [ -d "$ANDROID_SDK_ROOT" ] ; then
@@ -193,9 +192,12 @@ if [ -d "$HOME/.cargo" ]; then
   source $HOME/.cargo/env
 fi
 
+# if dotnet installed locally, add it to the path
+if [ -e "$HOME/.dotnet/dotnet" ]; then 
+  PATH="$HOME/.dotnet:$PATH"
+fi
+
 eval $(thefuck --alias) # enable thefuck properly
-
-
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/cameron/.sdkman"
