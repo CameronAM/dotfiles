@@ -69,6 +69,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   " lang support
   Plug 'sheerun/vim-polyglot'
+  Plug 'andreshazard/vim-freemarker'
 
   " integrate ternjs
   " Plug 'neoclide/tern-neovim' " javascript intelligence
@@ -159,7 +160,18 @@ autocmd bufwritepost init.vim source $MYVIMRC
 " ##############################
 " re-introduce some resharper like bindings
 " ##############################
-nnoremap <leader>gd <Plug>(coc-definition)
+" nmap <leader>gd <Plug>(coc-definition)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Remap for format selected region
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 " ##############################
 " custom leader maps
