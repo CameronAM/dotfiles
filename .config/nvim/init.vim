@@ -63,7 +63,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   endif
 
   " completion - CoC
-  Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+  " Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
   Plug 'Shougo/neco-syntax'  " syntax source for deoplete
 
