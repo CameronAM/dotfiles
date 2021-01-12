@@ -89,10 +89,10 @@ plugins=(
   zsh-syntax-highlighting
   zsh-autosuggestions
   fzf
-  kube-ps1
-  minikube
-  helm
-  kubectl
+  #kube-ps1
+  #minikube
+  #helm
+  #kubectl
 )
 
 source $ZSH/oh-my-zsh.sh
