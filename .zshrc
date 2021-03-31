@@ -197,6 +197,14 @@ if [ -e "$HOME/.dotnet/dotnet" ]; then
   PATH="$HOME/.dotnet:$PATH"
 fi
 
+# if exa is installed, add some aliases for it
+if [ -e "$(which exa)" ]; then
+  alias e='exa --long --all'
+  alias ee='exa --long'
+  alias eg='exa --long --all --git'
+  alias eeg='exa --long --git'
+fi
+
 eval $(thefuck --alias) # enable thefuck properly
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
